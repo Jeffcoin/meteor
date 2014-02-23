@@ -1,3 +1,5 @@
+proxyTo = 'http://blockexplorer.com/testnet/q/getreceivedbyaddress/'
+
 @Keys = new Meteor.Collection 'keys'
 
 if Meteor.isServer
@@ -13,3 +15,13 @@ if Meteor.isServer
           'Content-Type': 'application/json'
         @response.end JSON.stringify
           foo: 'bar'
+  
+  Router.map ->
+    @route '',
+      where: 'server'
+      path: '/testnet/q/getreceivedbyaddress/:address'
+      action: ->
+        result = HTTP.get 'http://blockexplorer.com/testnet/q/getreceivedbyaddress/' + @params.address,
+        @response.writeHead 200,
+          'X-Meiny': 'Crazy'
+        @response.end result.content
