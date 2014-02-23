@@ -11,6 +11,7 @@ if Meteor.isServer
         Keys.insert
           key: @params.key
           name: @params.name
+          created: new Date()
         @response.writeHead 200,
           'X-Meiny': 'Crazy'
           'Access-Control-Allow-Origin': '*'
