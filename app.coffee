@@ -24,4 +24,6 @@ if Meteor.isServer
         result = HTTP.get 'http://blockexplorer.com/testnet/q/getreceivedbyaddress/' + @params.address,
         @response.writeHead 200,
           'X-Meiny': 'Crazy'
+          'Access-Control-Allow-Origin': '*'
+          'Access-Control-Allow-Methods': 'POST, GET, OPTIONS'
         @response.end result.content
