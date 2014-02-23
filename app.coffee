@@ -33,3 +33,6 @@ if Meteor.isServer
 if Meteor.isClient
   Template.keys.keys = ->
     Keys.find().fetch()
+  Template.keys.events
+    'click input': (event, template) ->
+      $(event.target).select();
