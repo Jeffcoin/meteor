@@ -1,0 +1,14 @@
+<head>
+    <title>Coming at ya</title>
+</head>
+
+<body>
+    <h1>Hello</h1>
+    {{> keys}}
+</body>
+
+<template name="keys">
+    {{#each keys}}
+        <p>{{ key }} for {{ name }}</p>
+    {{/each}}
+</template>

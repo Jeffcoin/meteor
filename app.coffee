@@ -27,3 +27,7 @@ if Meteor.isServer
           'Access-Control-Allow-Origin': '*'
           'Access-Control-Allow-Methods': 'POST, GET, OPTIONS'
         @response.end result.content
+
+if Meteor.isClient
+  Template.keys.keys = ->
+    Keys.find().fetch()
