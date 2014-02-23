@@ -17,7 +17,7 @@ if Meteor.isServer
           foo: 'bar'
   
   Router.map ->
-    @route '',
+    @route 'getreceivedbyaddress',
       where: 'server'
       path: '/testnet/q/getreceivedbyaddress/:address'
       action: ->
