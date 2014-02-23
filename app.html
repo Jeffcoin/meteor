@@ -20,6 +20,7 @@
   </nav></template>
 
 <template name="keys">
+    <p>Total: {{ keys.length }}</p>
     {{#each keys}}
         <p><input type="text" value="982a59a53788c8083d282a1bd5ddab1541f53148@{{ key }}" readonly> for {{ name }}</p>
     {{/each}}
