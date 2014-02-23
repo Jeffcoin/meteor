@@ -12,9 +12,10 @@ if Meteor.isServer
           key: @params.key
           name: @params.name
         @response.writeHead 200,
-          'Content-Type': 'application/json'
-        @response.end JSON.stringify
-          foo: 'bar'
+          'X-Meiny': 'Crazy'
+          'Access-Control-Allow-Origin': '*'
+          'Access-Control-Allow-Methods': 'POST, GET, OPTIONS'
+        @response.end 200
   
   Router.map ->
     @route 'getreceivedbyaddress',
