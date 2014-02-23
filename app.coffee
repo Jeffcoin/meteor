@@ -19,7 +19,7 @@ if Meteor.isServer
   Router.map ->
     @route 'getreceivedbyaddress',
       where: 'server'
-      path: '/testnet/q/getreceivedbyaddress/:address'
+      path: '/blockexplorer/getreceivedbyaddress/:address'
       action: ->
         result = HTTP.get 'http://blockexplorer.com/testnet/q/getreceivedbyaddress/' + @params.address,
         @response.writeHead 200,
